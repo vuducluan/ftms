@@ -26,6 +26,7 @@ gem "whenever", require: false
 gem "i18n-js", ">= 3.0.0.rc11"
 gem "routing-filter"
 gem "public_activity"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "fabrication"

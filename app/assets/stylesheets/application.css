@@ -30,6 +30,8 @@
  *= require admin/programming_language
  *= require admin/status
  *= require admin/profile
+ *= require footer-distributed-with-address-and-phones
+ *= require font-awesome
  *= require bootstrap-datepicker3
  */
 

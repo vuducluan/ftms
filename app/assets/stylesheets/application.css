@@ -30,15 +30,13 @@
  *= require admin/programming_language
  *= require admin/status
  *= require admin/profile
-<<<<<<< HEAD
  *= require admin/user_progress
-=======
  *= require footer-distributed-with-address-and-phones
  *= require font-awesome
->>>>>>> header-footer
  *= require bootstrap-datepicker3
  *= require admin/AdminLTE.min
  *= require admin/all-skins.min
+ *= require style-user.css
  */
 
 @import "bootstrap-sprockets";

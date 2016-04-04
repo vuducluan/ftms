@@ -31,6 +31,9 @@
     margin-bottom: 1.25em;
     margin-top: 0;
   }
+  p {
+    margin-left: 10px;
+  }
   li {
     margin-bottom: 0.625em;
     margin-top: 0;
@@ -80,6 +83,11 @@
     -webkit-transition: 0.2s ease-in-out;
     transition: 0.2s ease-in-out;
   }
+  a:hover {
+    border-color: #fff;
+    color: #212BC7;
+    opacity: 0.75;
+  }
   img {
     height: auto;
     max-width: 100%;
@@ -106,7 +114,7 @@
     display: inline-block;
     text-align: center;
     white-space: nowrap;
-    font-size: 75%;
+    font-size: 85%;
     line-height: 3;
     padding: 0 2.5em;
     background-color: #21abc7;
@@ -176,11 +184,17 @@
     }
   }
   @media screen and (min-width: 64em) {
+    .grid-box-25 {
+      width: 25%
+    }
     .grid-box-4 {
       width: 40%;
     }
     .grid-box-6 {
       width: 60%;
+    }
+    .grid-box-75 {
+      width: 75%;
     }
   }
   .list {
@@ -201,7 +215,7 @@
   .markdown .list--object>li {
     float: left;
     margin-bottom: 0.625em;
-    margin-right: 0.625em;
+    margin-left: 1em;
   }
   @media screen and (min-width: 48em) {
     .list--object .list-item--label {
@@ -224,6 +238,10 @@
   .well {
     margin-bottom: 0.625em;
     margin-top: 0.625em;
+    padding-top: 0px;
+    background-color: #F6F8F8;
+    border: none;
+    box-shadow: none;
   }
   @media screen and (min-width: 48em) {
     .well {
@@ -246,14 +264,14 @@
     border-radius: 50%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     display: block;
-    height: 110px;
+    height: 100px;
     padding: 0.3125em;
     position: relative;
-    width: 110px;
+    width: 100px;
   }
   .breadcrumb>li {
     display: inline;
-    font-size: 85%;
+    font-size: 95%;
     font-weight: 600;
     margin-right: 0.625em;
   }
@@ -288,7 +306,7 @@
     }
   }
   .h--3 .h-label {
-    font-size: 60%;
+    font-size: 70%;
   }
   .h--4 .h-label {
     font-size: 60%;
@@ -299,7 +317,7 @@
   }
   .label {
     color: #aebdc1;
-    font-size: 75%;
+    font-size: 85%;
     font-weight: 600;
     letter-spacing: 0.0125em;
     text-transform: uppercase;
@@ -319,6 +337,9 @@
   .breadcrumb-bar {
     margin-bottom: 0em;
     text-align: left;
+  }
+  .breadcrumb {
+    background-color: #f6f8f8 !important;
   }
   .bdrl {
     border-left: 1px solid #e2e8e9;
@@ -414,6 +435,7 @@
   }
   .mts {
     margin-top: 0.625em;
+    margin-left: 2em;
   }
   @media screen and (min-width: 48em) {
     .mts--m {
@@ -435,6 +457,9 @@
   .tac {
     text-align: center;
   }
+  .tau {
+    margin-left: 33px;
+  }
   .tar {
     text-align: right;
   }
@@ -453,7 +478,7 @@
     color: #393d40;
   }
   .tsxs {
-    font-size: 75%;
+    font-size: 90%;
   }
   .tss {
     font-size: 85%;

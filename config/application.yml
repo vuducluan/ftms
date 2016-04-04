@@ -14,6 +14,7 @@ defaults: &defaults
   flag_size: "20x15"
   image_user_size: "50x50"
   image_profile: "150x150"
+  image_user_subject: "100x100"
   finish: "finish"
   finished: "finished"
   date_format: "%H:%M:%S %-d %B %Y"

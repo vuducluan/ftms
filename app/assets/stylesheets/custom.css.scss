@@ -1,23 +1,7 @@
-body {
-  font-size: 100%;
-}
 html {
-  background: #f6f8f8;
-  color: #393d40;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  -webkit-font-feature-settings: "kern";
-  -moz-font-feature-settings: "kern";
-  font-feature-settings: "kern";
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.5;
-  min-height: 100%;
-  position: relative;
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+    position: relative;
+    min-height: 100%;
 }
-
 /* header */
 #admin-header {
   .flag-language {
@@ -121,7 +105,7 @@ body {
 
 .body_wrapper {
   margin-top: 50px;
-  padding-bottom: 350px;
+  margin-bottom: 350px;
 }
 
 .center {
@@ -178,7 +162,7 @@ select {
 
 .label {
   font-size: 100%;
-  margin: -5px;
+  margin: 5px;
   padding: 5px;
 }
 

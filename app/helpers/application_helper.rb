@@ -80,4 +80,9 @@ module ApplicationHelper
   def image_course_subject_tag course_subject
     image_tag course_subject.image_url ? course_subject.image_url : "no-image"
   end
+
+  def image_task_tag user_task
+    image_tag user_task.task_image_url ? user_task.task_image_url : "ruby",
+      class: "img-circle"
+  end
 end

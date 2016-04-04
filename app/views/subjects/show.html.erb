@@ -1,13 +1,18 @@
-<div id="subject-show" class="new">
+<div id="subject-show">
   <div class="row">
-    <div class="cell well">
+    <div class="cell">
       <div class="grid">
         <div class="grid-box grid-box-6">
           <div class="breadcrumb-bar tac tal--l">
             <ul class="list breadcrumb mts">
-              <li><%= link_to t("layouts.path"), root_path %></li>
+              <li>
+                <%= link_to root_url do %>
+                  <i class="glyphicon glyphicon-th-list"></i>
+                  <%= t "layouts.paths" %>
+                <% end %>
+              </li>
               <li><%= link_to t("layouts.all_courses"), courses_path %></li>
-              <li><%= link_to @user_subject.course_name, course_path(@user_subject.user_course) %></li>
+              <li><%= link_to @user_subject.course_name,  user_course_path(@user_subject.user_course) %></li>
               <li class="is-active"><%= @user_subject.subject_name %></li>
             </ul>
           </div>
@@ -29,7 +34,7 @@
   <div class="row has-sector">
     <div class="cell">
       <div class="grid">
-        <div class="grid-box grid-box-6">
+        <div class="grid-box grid-box-75">
           <div class="well well--l">
             <div class="mbl">
               <div class="mbl--m">
@@ -40,74 +45,41 @@
               <ol class="list list--divided list--divided--m list--divided--f
                 list--divided--open mlm--l">
                 <% @user_tasks.each do |user_task| %>
-                <hr />
-                <li class="list-item mbm pbm por" id="course-overview">
-                  <div class="bucket bucket--flag">
-                    <div class="bucket-media dn db--m">
-                      <div class="badge">
-                        <%= image_tag user_task.avatar %>
+                  <hr />
+                  <li class="list-item mbm pbm por" id="course-overview">
+                    <div class="bucket bucket--flag">
+                      <div class="bucket-media dn db--m">
+                        <div class="badge">
+                          <%= image_task_tag user_task %>
+                        </div>
+                      </div>
+                      <div class="bucket-content">
+                        <h3 class="h h--3">
+                          <b class="h-label opf">
+                            <span class="prs tcs">
+                              <%= t "tasks.statuses.#{Settings.tasks.statuses.key(user_task.status)}" %>
+                            </span>
+                            <span class="bdrl pls tch"><%= "#{user_task.progress} %" %></span>
+                          </b>
+                          <%= user_task.task_name %>
+                          <h4>
+                            <%= link_to t("subjects.task.edit"), "#", class: "db di--m tch tsxs" %>
+                            <%= link_to t("subjects.task.delete"), "#", class: "db di--m tch tsxs" %>
+                          </h4>
+                        </h3>
+                        <p class="mbf"><%= user_task.task_description %></p>
                       </div>
                     </div>
-                    <div class="bucket-content">
-                      <h3 class="h h--3">
-                        <b class="h-label opf">
-                          <span class="prs tcs">
-                            <%= t "tasks.statuses.#{Settings.tasks.statuses.key(user_task.status)}" %>
-                          </span>
-                          <span class="bdrl pls tch"><%= "#{user_task.progress} %" %></span>
-                        </b>
-                        <%= user_task.name %>
-                        <h4>
-                          <%= link_to t("subjects.task.edit"), "#", class: "db di--m mls--m tcs tsxs" %>
-                          <%= link_to t("subjects.task.delete"), "#", class: "db di--m mls--m tcs tsxs" %>
-                        </h4>
-                      </h3>
-                      <p class="mbf"><%= user_task.description %></p>
-                    </div>
-                  </div>
-                </li>
+                  </li>
                 <% end %>
               </ol>
             </div>
           </div>
         </div>
-        <div class="grid-box grid-box-4 sector">
+        <div class="grid-box grid-box-25 sector">
           <div class="well well--l">
             <div class="sector-content">
-              <h2 class="label"><%= t "subjects.about_trainer" %></h2>
-              <% @trainers.each do |trainer| %>
-                <div id="teaching-assistants">
-                  <ul class="list list--object list--object--m">
-                    <li class="list-item">
-                      <div class="bucket-media dn db--m">
-                        <div class="badge img-circle">
-                          <%= image_tag(trainer.avatar, class: "img-circle") %>
-                        </div>
-                      </div>
-                      <p class="tac tsxs">
-                        <strong><%= link_to trainer.name, "#" %></strong>
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-              <% end %>
-              <h2 class="label"><%= t "subjects.about_trainee" %></h2>
-                <div id="teaching-assistants">
-                  <ul class="list list--object list--object--m">
-                    <% @trainees.each do |trainee| %>
-                      <li class="list-item">
-                        <div class="bucket-media dn db--m">
-                          <div class="badge img-circle">
-                            <%= image_tag(trainee.avatar, class: "img-circle") %>
-                          </div>
-                        </div>
-                        <p class="tac tsxs">
-                          <strong><%= link_to trainee.name, "#" %></strong>
-                        </p>
-                      </li>
-                    <% end %>
-                  </ul>
-                </div>
+              <%= render "user_subject" %>
               <h3 class="label"><%= t "subjects.note" %></h3>
             </div>
           </div>

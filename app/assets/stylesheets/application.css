@@ -35,6 +35,7 @@
  *= require admin/AdminLTE.min
  *= require admin/all-skins.min
  *= require footer
+ *= require new_style.css
  */
 
 @import "bootstrap-sprockets";

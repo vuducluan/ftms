@@ -45,7 +45,7 @@
                   <div class="bucket bucket--flag">
                     <div class="bucket-media dn db--m">
                       <div class="badge">
-                        <%= image_tag user_task.avatar %>
+                        <%= image_task_tag user_task %>
                       </div>
                     </div>
                     <div class="bucket-content">
@@ -81,7 +81,7 @@
                     <li class="list-item">
                       <div class="bucket-media dn db--m">
                         <div class="badge img-circle">
-                          <%= image_tag(trainer.avatar, class: "img-circle") %>
+                          <%= avatar_user_tag trainer, "img-circle" %>
                         </div>
                       </div>
                       <p class="tac tsxs">
@@ -98,7 +98,7 @@
                       <li class="list-item">
                         <div class="bucket-media dn db--m">
                           <div class="badge img-circle">
-                            <%= image_tag(trainee.avatar, class: "img-circle") %>
+                            <%= avatar_user_tag trainee, "img-circle" %>
                           </div>
                         </div>
                         <p class="tac tsxs">

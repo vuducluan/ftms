@@ -71,4 +71,8 @@ module ApplicationHelper
     image_tag course.image_url ? course.image_url : language,
       size: Settings.image_size
   end
+
+  def image_task_tag user_task
+    image_tag user_task.task.image_url ? user_task.task.image_url : "level-1-on-rails-for-zombies", class: "img-circle"
+  end
 end

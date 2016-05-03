@@ -9,6 +9,10 @@ class Admin::AllocatePermissionsController < ApplicationController
         end
       end
     end
+
+    add_breadcrumb "Roles", :admin_roles_path
+    add_breadcrumb @role.name
+    add_breadcrumb "Edit"
   end
 
   def update

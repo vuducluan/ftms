@@ -1,21 +1,5 @@
 <div id="user-subject" >
   <div class="row">
-    <div class="row subject-breadcrumb">
-      <ol class="breadcrumb">
-        <li>
-          <%= link_to t("courses.breadcum.home"), root_url %>
-        </li>
-        <li>
-          <%= link_to t("courses.breadcum.courses"), admin_courses_path %>
-        </li>
-        <li>
-          <%= link_to @course.name, admin_course_path(@course) %>
-        </li>
-        <li class="active"><%= @course_subject.subject_name %></li>
-      </ol>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-md-2">
       <%= image_target_tag @course_subject %>
     </div>

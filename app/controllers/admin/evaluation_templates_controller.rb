@@ -3,6 +3,18 @@ class Admin::EvaluationTemplatesController < ApplicationController
 
   def index
     @evaluation_template = EvaluationTemplate.new
+
+    add_breadcrumb "Evaluation Templates"
+  end
+
+  def new
+    add_breadcrumb "Evaluation Templates", :admin_evaluation_templates_path
+    add_breadcrumb "New"
+  end
+
+  def edit
+    add_breadcrumb "Evaluation Templates", :admin_evaluation_templates_path
+    add_breadcrumb "Edit"
   end
 
   def create

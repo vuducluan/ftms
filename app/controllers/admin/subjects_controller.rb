@@ -5,6 +5,8 @@ class Admin::SubjectsController < ApplicationController
     @subject = Subject.new
     @search = Subject.recent.search(params[:q])
     @subjects = @search.result
+
+    add_breadcrumb "All Subjects"
   end
 
   def show
@@ -22,6 +24,9 @@ class Admin::SubjectsController < ApplicationController
   def new
     @subject.documents.build
     @subject.task_masters.build.documents.build
+
+    add_breadcrumb "All Subjects", :admin_subjects_path
+    add_breadcrumb "New Subject", :new_admin_subject_path
   end
 
   def create
@@ -36,6 +41,9 @@ class Admin::SubjectsController < ApplicationController
   end
 
   def edit
+    add_breadcrumb "All Subjects", :admin_subjects_path
+    add_breadcrumb @subject.name, :admin_subject_path
+    add_breadcrumb "Edit"
   end
 
   def update

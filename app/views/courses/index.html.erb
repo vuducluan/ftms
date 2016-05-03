@@ -1,10 +1,16 @@
 <div id="user-course-index">
-  <ul class="list">
-    <li class="paths list-item">
-      <i class="glyphicon glyphicon-th-list"></i>
-      <%= link_to t("courses.paths"), courses_path, class: "link--underline" %>
-    </li>
-  </ul>
+  <div class="breadcrumb-bar tac tal--l">
+    <ul class="list breadcrumb mts">
+      <li>
+        <%= link_to root_url do %>
+          <i class="glyphicon glyphicon-th-list"></i>
+          <%= t "layouts.paths" %>
+        <% end %>
+      </li>
+      <li class="active"><%= t "layouts.all_courses" %></li>
+    </ul>
+  </div>
+  <hr>
 
   <div class="introduce-content">
     <h2><%= t "courses.demo_introduce" %></h2>

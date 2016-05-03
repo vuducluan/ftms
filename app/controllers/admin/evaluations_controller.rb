@@ -10,6 +10,8 @@ class Admin::EvaluationsController < ApplicationController
     role_trainee = Role.trainee
     @search = User.find_by_role(role_trainee).search params[:q]
     @users = @search.result
+
+    add_breadcrumb "Evaluations"
   end
 
   def new
@@ -17,6 +19,10 @@ class Admin::EvaluationsController < ApplicationController
       @evaluation.evaluation_details.build(name: template.name,
         point: template.min_point, evaluation_template_id: template.id)
     end
+
+    add_breadcrumb @user.name, @user
+    add_breadcrumb "Evaluations", :admin_evaluations_path
+    add_breadcrumb "New"
   end
 
   def create

@@ -5,10 +5,21 @@ class Admin::CoursesController < ApplicationController
   def index
     @courses = (current_user.is_admin? ? @courses.recent : current_user.courses)
       .sort_by &:programming_language_id
+
+    add_breadcrumb "All Courses"
   end
 
   def new
     @course.documents.build
+
+    add_breadcrumb "All Courses", :admin_courses_path
+    add_breadcrumb "New Course", :new_admin_course_path
+  end
+
+  def edit
+    add_breadcrumb "All Courses", :admin_courses_path
+    add_breadcrumb @course.name, :admin_course_path
+    add_breadcrumb "Edit"
   end
 
   def create
@@ -36,6 +47,9 @@ class Admin::CoursesController < ApplicationController
     @users = @course.users
     @trainers = @course.users.trainers
     @trainees = @course.users.trainees
+
+    add_breadcrumb "All Courses", :admin_courses_path
+    add_breadcrumb @course.name, :admin_course_path
   end
 
   def destroy

@@ -3,6 +3,12 @@ class Admin::RolesController < ApplicationController
 
   def index
     @roles = Role.all
+
+    add_breadcrumb "Roles", :admin_roles_path
+  end
+
+  def new
+    add_breadcrumb "New Role", :new_admin_role_path
   end
 
   def create
@@ -16,6 +22,8 @@ class Admin::RolesController < ApplicationController
   end
 
   def edit
+    add_breadcrumb @role.name, :admin_role_path
+    add_breadcrumb "Edit"
   end
 
   def update

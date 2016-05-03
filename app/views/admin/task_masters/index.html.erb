@@ -1,16 +1,7 @@
 <div id="admin-subject-show">
-  <div class="row">
-    <div class="row subject-breadcrumb">
-      <ol class="breadcrumb">
-        <li>
-          <%= link_to t("courses.breadcum.home"), root_url %>
-        </li>
-        <li>
-          <%= link_to t("subjects.breadcum.subjects"), admin_subjects_path %>
-        </li>
-        <li class="active"><%= @subject.name %></li>
-      </ol>
-    </div>
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs tag: :li %>
+  </ol>
   </div>
   <div class="row">
     <div class="col-md-2">

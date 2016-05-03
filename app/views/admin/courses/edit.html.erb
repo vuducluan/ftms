@@ -1,16 +1,5 @@
 <div class="title" id="courses"></div>
-<div class="row course-breadcrumb">
-  <ol class="breadcrumb">
-    <li>
-      <%= link_to t("courses.breadcum.home"), root_url %>
-    </li>
-    <li>
-      <%= link_to t("courses.breadcum.courses"), admin_courses_path %>
-    </li>
-    <li>
-      <%= link_to @course.name, admin_course_path(@course) %>
-    </li>
-    <li class="active"><%= t("courses.breadcum.edit") %></li>
-  </ol>
-</div>
+<ol class="breadcrumb">
+  <%= render_breadcrumbs tag: :li %>
+</ol>
 <%= render "form" %>

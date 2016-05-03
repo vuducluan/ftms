@@ -3,6 +3,18 @@ class Admin::RanksController < ApplicationController
 
   def index
     @rank = Rank.new
+
+    add_breadcrumb "Ranks"
+  end
+
+  def new
+    add_breadcrumb "Ranks", :admin_ranks_path
+    add_breadcrumb "New"
+  end
+
+  def edit
+    add_breadcrumb "Ranks", :admin_ranks_path
+    add_breadcrumb "Edit"
   end
 
   def create

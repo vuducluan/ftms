@@ -29,6 +29,7 @@ gem "mini_magick"
 gem "jquery-ui-rails"
 gem "ranked-model"
 gem "highcharts-rails"
+gem "breadcrumbs_on_rails"
 
 group :development, :test do
   gem "fabrication"

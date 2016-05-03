@@ -1,4 +1,7 @@
 <div id="admin-courses">
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs tag: :li %>
+  </ol>
   <div class="title"><%= t "layouts.courses" %></div>
   <p class="pull-right"><%= link_to t("courses.buttons.admin.create"),
     new_admin_course_path, class: "btn btn-success" %></p>

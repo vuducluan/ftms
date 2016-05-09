@@ -8,13 +8,6 @@ class Admin::UserTasksController < ApplicationController
     add_breadcrumb @user_task.task_name
   end
 
-  def edit
-    load_breadcrumbs
-    add_breadcrumb @user_task.task_name,
-      admin_course_subject_user_task_path(@course_subject, @user_task)
-    add_breadcrumb t("breadcrumbs.user_task.update")
-  end
-
   def create
     if @user_task.save
       flash[:success] = flash_message "created"
@@ -45,7 +38,7 @@ class Admin::UserTasksController < ApplicationController
   end
 
   def load_breadcrumbs
-    add_breadcrumb_courses
+    add_breadcrumb_path "courses"
     add_breadcrumb @course.name, admin_course_path(@course)
     add_breadcrumb @course_subject.subject_name,
       admin_course_subject_path(@course, @course_subject.subject)

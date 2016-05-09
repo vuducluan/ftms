@@ -14,7 +14,7 @@ class Admin::TasksController < ApplicationController
 
   def new
     load_breadcrumbs
-    add_breadcrumb t("breadcrumbs.subjects.new_task")
+    add_breadcrumb_edit "tasks"
   end
 
   def edit
@@ -66,7 +66,7 @@ class Admin::TasksController < ApplicationController
   end
 
   def load_breadcrumbs
-    add_breadcrumb_courses
+    add_breadcrumb_path "courses"
     add_breadcrumb @course_subject.course_name,
       admin_course_path(@course_subject.course)
     add_breadcrumb @course_subject.subject_name,
